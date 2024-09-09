@@ -15,9 +15,7 @@ document
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: `username=${encodeURIComponent(
-          username
-        )}&password=${encodeURIComponent(password)}`,
+        body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&ip=${encodeURIComponent(getUserIP())}`
       }
     )
       .then((response) => response.json())
@@ -34,3 +32,8 @@ document
 
     // 在這裡可以添加進一步的驗證或登入邏輯
   });
+
+  function getUserIP() {
+    // 這裡可以使用一個公共 API 來獲取 IP，這只是一個示範
+    return "0.0.0.0"; // 伺服器端無法直接獲取用戶 IP
+}
