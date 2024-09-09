@@ -22,6 +22,7 @@ document
       .then((data) => {
         if (data.success) {
           alert(data.message); // 登入成功
+          window.location.href = 'page2.html'; // 跳轉至 page2.html
         } else {
           alert(data.message); // 登入失敗
         }
